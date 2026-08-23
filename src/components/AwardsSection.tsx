@@ -3,8 +3,8 @@ import { Award, Star, TrendingUp, Sparkles } from "lucide-react";
 
 const awards = [
   {
-    title: "Emerging University of the Year",
-    organization: "Education Excellence Awards 2025",
+    title: "Promising Tech Institute",
+    organization: "State Education Board",
     icon: Star,
     color: "from-amber-400 to-orange-500",
     bg: "bg-amber-500/10",
@@ -12,8 +12,8 @@ const awards = [
     text: "text-amber-500",
   },
   {
-    title: "Most Innovative New Campus",
-    organization: "Global Architecture & Education Forum",
+    title: "Excellence in Infrastructure",
+    organization: "Campus Design Review",
     icon: Sparkles,
     color: "from-blue-400 to-indigo-500",
     bg: "bg-blue-500/10",
@@ -21,8 +21,8 @@ const awards = [
     text: "text-blue-500",
   },
   {
-    title: "Rising Star in Tech Placements",
-    organization: "Industry-Academia Council",
+    title: "Upcoming Innovation Hub",
+    organization: "Local Tech Community",
     icon: TrendingUp,
     color: "from-emerald-400 to-teal-500",
     bg: "bg-emerald-500/10",
@@ -30,8 +30,8 @@ const awards = [
     text: "text-emerald-500",
   },
   {
-    title: "Best Startup Incubator",
-    organization: "National Entrepreneurship Network",
+    title: "Student-Centric Campus",
+    organization: "Education Forum",
     icon: Award,
     color: "from-purple-400 to-pink-500",
     bg: "bg-purple-500/10",

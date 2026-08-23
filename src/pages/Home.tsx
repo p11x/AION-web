@@ -237,16 +237,18 @@ export default function Home() {
                   <Target className="h-32 w-32" />
                 </div>
                 <div className="relative z-10">
-                  <h3 className="mb-4 text-2xl font-bold">Our Vision & Mission</h3>
-                  <p className="text-blue-100 leading-relaxed mb-6">
-                    To be a globally recognized institution that nurtures innovation, leadership, and ethical values, shaping the future of technology and business through world-class education and industry collaboration.
-                  </p>
-                  <Link
-                    to="/about"
-                    className="inline-flex items-center text-sm font-semibold text-white hover:text-blue-200 transition-colors"
-                  >
-                    Read Full Story <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  <div className="mb-6">
+                    <h3 className="mb-2 text-xl font-bold uppercase tracking-wider">Vision</h3>
+                    <p className="text-blue-100 leading-relaxed">
+                      To be a premier technological hub in offering training for student community in state Of the art technology and providing countless career options.
+                    </p>
+                  </div>
+                  <div className="mb-6">
+                    <h3 className="mb-2 text-xl font-bold uppercase tracking-wider">Mission</h3>
+                    <p className="text-blue-100 leading-relaxed">
+                      To create a comprehensive place where students and professionals can develop their technical skills and discover boundless employment opportunities.
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>

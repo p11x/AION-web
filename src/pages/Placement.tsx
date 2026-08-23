@@ -36,18 +36,22 @@ const processSteps = [
 ];
 
 const recruiters = [
-  { name: "Zerodha", domain: "zerodha.com" },
-  { name: "Razorpay", domain: "razorpay.com" },
-  { name: "Postman", domain: "postman.com" },
-  { name: "CRED", domain: "cred.club" },
-  { name: "Groww", domain: "groww.in" },
-  { name: "Meesho", domain: "meesho.com" },
-  { name: "Swiggy", domain: "swiggy.com" },
-  { name: "Zomato", domain: "zomato.com" },
-  { name: "Paytm", domain: "paytm.com" },
-  { name: "Pine Labs", domain: "pinelabs.com" },
-  { name: "Udaan", domain: "udaan.com" },
-  { name: "Lenskart", domain: "lenskart.com" }
+  { name: "Omega Healthcare", domain: "omegahealthcare.com" },
+  { name: "Teleperformance", domain: "teleperformance.com" },
+  { name: "HGS", domain: "hgs.cx" },
+  { name: "Mitsubishi", domain: "mitsubishimotors.com" },
+  { name: "Fujitsu", domain: "www.fujitsu.com" },
+  { name: "Convey Tech Labs", domain: "conveytechlabs.com" },
+  { name: "Airtel", domain: "airtel.in" },
+  { name: "Accenture", domain: "accenture.com" },
+  { name: "[24]7.ai", domain: "247.ai" },
+  { name: "ELMEASURE", domain: "elmeasure.com" },
+  { name: "Flipkart", domain: "flipkart.com" },
+  { name: "ELECSIS", domain: "elecsis.com" },
+  { name: "JINDALX", domain: "jindalx.com" },
+  { name: "upGrad", domain: "upgrad.com" },
+  { name: "Tata Motors", domain: "tatamotors.com" },
+  { name: "Wipro", domain: "wipro.com" }
 ];
 
 export default function Placement() {
@@ -260,7 +264,7 @@ export default function Placement() {
                       className="flex h-20 items-center justify-center space-x-3 rounded-2xl bg-white/5 border border-white/10 px-6 transition-all hover:bg-white/10 hover:border-white/20 hover:shadow-lg hover:shadow-blue-900/20"
                     >
                       <img 
-                        src={`https://www.google.com/s2/favicons?domain=${recruiter.domain}&sz=128`} 
+                        src={`https://logo.clearbit.com/${recruiter.domain}`} onError={(e) => { e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${recruiter.domain}&sz=128`; e.currentTarget.onerror = null; }} 
                         alt={recruiter.name} 
                         className="h-8 w-8 object-contain rounded-md"
                       />
