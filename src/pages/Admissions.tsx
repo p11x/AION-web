@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "motion/react";
-import { FileText, Download, HelpCircle, CheckCircle, GraduationCap, DollarSign, BookOpen, Clock, Check, PenLine, Users, ArrowRight } from "lucide-react";
+import { FileText, HelpCircle, CheckCircle, GraduationCap, Check, PenLine, Users, ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 type ApplicationForm = {
@@ -176,95 +176,16 @@ export default function Admissions() {
       </section>
 
       {/* Main Content Area */}
-      <section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24">
-        
-        <div className="grid gap-12 lg:grid-cols-3">
-          
-          {/* Left Column: Eligibility & Need Assistance */}
-          <div className="lg:col-span-1 space-y-8">
-            
-            {/* Eligibility & Salary Details */}
-            <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ delay: 0.2 }}
-               className="rounded-3xl bg-white p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-100"
-            >
-              <div className="mb-6 border-b border-slate-100 pb-4">
-                <span className="mb-2 inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-600">
-                  Aion Technology (P) Ltd.
-                </span>
-                <h3 className="text-xl font-bold text-slate-900">Recruitment Criteria</h3>
-              </div>
-              <div className="space-y-6">
-                <div>
-                   <h4 className="mb-3 flex items-center text-base font-bold text-slate-900">
-                     <BookOpen className="mr-2 h-4 w-4 text-blue-500" /> Eligibility
-                   </h4>
-                   <ul className="space-y-2 text-sm text-slate-600">
-                     <li className="rounded-lg bg-slate-50 p-2.5"><span className="block font-bold text-slate-900 text-xs">Category 1</span> Graduates BA, BCom, BSc</li>
-                     <li className="rounded-lg bg-slate-50 p-2.5"><span className="block font-bold text-slate-900 text-xs">Category 2</span> Skilled B.Tech, BBA, BCA, BDS</li>
-                     <li className="rounded-lg bg-slate-50 p-2.5"><span className="block font-bold text-slate-900 text-xs">Category 3</span> PG MA, MCom, MSc</li>
-                     <li className="rounded-lg bg-slate-50 p-2.5"><span className="block font-bold text-slate-900 text-xs">Category 4</span> Skilled MBA, MCA, M.Sc (DS)</li>
-                     <li className="rounded-lg bg-slate-50 p-2.5"><span className="block font-bold text-slate-900 text-xs">Category 5</span> Other than above</li>
-                   </ul>
-                </div>
-                <div>
-                  <h4 className="mb-3 flex items-center text-base font-bold text-slate-900">
-                    <DollarSign className="mr-2 h-4 w-4 text-emerald-500" /> Salary (CTC)
-                  </h4>
-                  <ul className="space-y-2 text-sm text-slate-600">
-                    <li className="flex justify-between rounded-lg bg-slate-50 p-2.5"><span className="font-bold text-slate-900">Cat 1</span> <span>1.8 - 8 LPA</span></li>
-                    <li className="flex justify-between rounded-lg bg-slate-50 p-2.5"><span className="font-bold text-slate-900">Cat 2</span> <span>5 - 20 LPA</span></li>
-                    <li className="flex justify-between rounded-lg bg-slate-50 p-2.5"><span className="font-bold text-slate-900">Cat 3</span> <span>3 - 12 LPA</span></li>
-                    <li className="flex justify-between rounded-lg bg-slate-50 p-2.5"><span className="font-bold text-slate-900">Cat 4</span> <span>5 - 26 LPA</span></li>
-                    <li className="flex justify-between rounded-lg bg-slate-50 p-2.5"><span className="font-bold text-slate-900">Cat 5</span> <span>1.5 - 7 LPA</span></li>
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="rounded-3xl bg-slate-900 p-8 shadow-xl shadow-slate-900/20 text-white"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-emerald-400">
-                <HelpCircle className="h-6 w-6" />
-              </div>
-              <h3 className="mb-4 text-2xl font-bold">
-                Need Assistance?
-              </h3>
-              <p className="mb-6 text-slate-300 leading-relaxed">
-                Have questions about the fee structure, eligibility, or scholarship opportunities? Our admissions team is here to help.
-              </p>
-              <div className="space-y-3">
-                <Link to="/contact" className="flex items-center justify-center w-full rounded-xl bg-emerald-600 hover:bg-emerald-500 transition-colors p-4 text-center font-bold text-white shadow-md shadow-emerald-900/20">
-                  Contact Us
-                </Link>
-                <div className="rounded-xl bg-white/5 p-4 border border-white/10">
-                  <p className="text-sm font-medium text-slate-400 mb-1">Email</p>
-                  <p className="font-semibold text-white">admissions@aiontech.edu</p>
-                </div>
-                <div className="rounded-xl bg-white/5 p-4 border border-white/10">
-                  <p className="text-sm font-medium text-slate-400 mb-1">Phone</p>
-                  <p className="font-semibold text-white">+91 8050350011</p>
-                </div>
-              </div>
-            </motion.div>
-
-          </div>
-
-          {/* Right Column: Application Form & Details */}
-          <div className="lg:col-span-2 space-y-8">
-            <motion.div
-               initial={{ opacity: 0, y: 20 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ delay: 0.4 }}
-               className="rounded-3xl bg-white p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-100 sm:p-10"
-            >
-              {isSubmitted ? (
+      <section className="mx-auto max-w-4xl px-4 py-12 sm:py-16">
+        <div className="space-y-8">
+          {/* Application Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="rounded-3xl bg-white p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-100 sm:p-10"
+          >
+            {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center">
                   <motion.div 
                     initial={{ scale: 0 }}
@@ -391,8 +312,37 @@ export default function Admissions() {
               )}
             </motion.div>
 
+            {/* Need Assistance */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="rounded-3xl bg-slate-900 p-8 shadow-xl shadow-slate-900/20 text-white"
+            >
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-emerald-400">
+                <HelpCircle className="h-6 w-6" />
+              </div>
+              <h3 className="mb-4 text-2xl font-bold">
+                Need Assistance?
+              </h3>
+              <p className="mb-6 text-slate-300 leading-relaxed">
+                Have questions about the fee structure, eligibility, or scholarship opportunities? Our admissions team is here to help.
+              </p>
+              <div className="space-y-3">
+                <Link to="/contact" className="flex items-center justify-center w-full rounded-xl bg-emerald-600 hover:bg-emerald-500 transition-colors p-4 text-center font-bold text-white shadow-md shadow-emerald-900/20">
+                  Contact Us
+                </Link>
+                <div className="rounded-xl bg-white/5 p-4 border border-white/10">
+                  <p className="text-sm font-medium text-slate-400 mb-1">Email</p>
+                  <p className="font-semibold text-white">admissions@aiontech.edu</p>
+                </div>
+                <div className="rounded-xl bg-white/5 p-4 border border-white/10">
+                  <p className="text-sm font-medium text-slate-400 mb-1">Phone</p>
+                  <p className="font-semibold text-white">+91 8050350011</p>
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </div>
       </section>
     </div>
   );
