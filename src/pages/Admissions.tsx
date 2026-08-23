@@ -215,26 +215,26 @@ export default function Admissions() {
                         <input {...register("applicantName", { required: true })} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="Full Legal Name" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-slate-700">Date of Birth <span className="text-red-500">*</span></label>
-                        <input type="date" {...register("dob", { required: true })} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" />
+                        <label className="text-sm font-semibold text-slate-700">Date of Birth</label>
+                        <input type="date" {...register("dob")} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" />
                       </div>
                       
                       <div className="space-y-2 md:col-span-2">
-                        <label className="text-sm font-semibold text-slate-700">Current Address <span className="text-red-500">*</span></label>
-                        <input {...register("address", { required: true })} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="Street Address, Apartment/Suite" />
+                        <label className="text-sm font-semibold text-slate-700">Current Address</label>
+                        <input {...register("address")} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="Street Address, Apartment/Suite" />
                       </div>
                       
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-slate-700">City <span className="text-red-500">*</span></label>
-                        <input {...register("city", { required: true })} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="e.g. Mumbai" />
+                        <label className="text-sm font-semibold text-slate-700">City</label>
+                        <input {...register("city")} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="e.g. Mumbai" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-slate-700">State <span className="text-red-500">*</span></label>
-                        <input {...register("state", { required: true })} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="e.g. Maharashtra" />
+                        <label className="text-sm font-semibold text-slate-700">State</label>
+                        <input {...register("state")} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="e.g. Maharashtra" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-slate-700">Pincode <span className="text-red-500">*</span></label>
-                        <input {...register("pincode", { required: true })} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="e.g. 400001" />
+                        <label className="text-sm font-semibold text-slate-700">Pincode</label>
+                        <input {...register("pincode")} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="e.g. 400001" />
                       </div>
                       
                       <div className="space-y-2">
@@ -252,8 +252,8 @@ export default function Admissions() {
                       </div>
                       
                       <div className="space-y-2 md:col-span-2">
-                        <label className="text-sm font-semibold text-slate-700">Application Category <span className="text-red-500">*</span></label>
-                        <select {...register("category", { required: true })} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200">
+                        <label className="text-sm font-semibold text-slate-700">Application Category</label>
+                        <select {...register("category")} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200">
                           <option value="">Select Category...</option>
                           <option value="Cat 1">Category 1 (Graduates BA, BCom, BSc)</option>
                           <option value="Cat 2">Category 2 (Skilled Graduates B.Tech, BBA, BCA, BDS)</option>
