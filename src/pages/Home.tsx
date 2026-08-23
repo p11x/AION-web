@@ -56,7 +56,7 @@ export default function Home() {
             >
               <span className="mr-2 flex h-2 w-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
               <span className="text-sm font-medium tracking-wide text-blue-200">
-                Welcome to AION Technologies (P) Ltd.
+                Welcome to Aion Institute of Management Studies
               </span>
             </motion.div>
 
