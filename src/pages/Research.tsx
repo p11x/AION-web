@@ -45,7 +45,7 @@ export default function Research() {
             >
               <Microscope className="mr-2 h-4 w-4 text-blue-400" />
               <span className="text-sm font-semibold tracking-wide text-blue-200">
-                AION Technologies Research
+                AION-IMS Research
               </span>
             </motion.div>
             <motion.h1 

@@ -184,7 +184,7 @@ export default function Home() {
           <div className="mb-16 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">About Us</h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
-              Discover what makes AION Technologies and AIMS a premier destination for higher education and professional growth.
+              Discover what makes AION-IMS and AIMS a premier destination for higher education and professional growth.
             </p>
           </div>
 
@@ -211,7 +211,7 @@ export default function Home() {
                 </div>
                 <h3 className="mb-3 text-2xl font-bold text-slate-900">About AION Tech (P) Ltd.</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  As the parent organization, AION Technologies focuses on technological innovation and recruitment. We partner with top banks, IT firms, and manufacturing giants to provide unparalleled placement opportunities for our graduates.
+                  As the parent organization, AION-IMS focuses on technological innovation and recruitment. We partner with top banks, IT firms, and manufacturing giants to provide unparalleled placement opportunities for our graduates.
                 </p>
               </div>
             </motion.div>

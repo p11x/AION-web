@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-slate-800 pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} AION Technologies (P) Ltd. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} AION-IMS. All rights reserved.</p>
         </div>
       </div>
     </footer>
