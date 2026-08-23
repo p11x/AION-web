@@ -1,0 +1,29 @@
+name: Deploy to Firebase Hosting
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: FirebaseExtended/action-setup-firebase@v3
+        with:
+          project_id: aion-ims
+      - uses: FirebaseExtended/action-deploy-firebases-hosting@v0
+        with:
+          firebase-hosting: dist
+          projectId: aion-ims
