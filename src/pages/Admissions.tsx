@@ -43,7 +43,7 @@ export default function Admissions() {
       setErrorMessage("");
 
       const formData = new FormData();
-      formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+      formData.append("access_key", "1763327e-4907-474d-9dda-ec484ad806fd");
       formData.append("from_name", data.applicantName);
       formData.append("from_email", data.email);
       formData.append("subject", `New Admission Application - ${data.applicantName}`);
