@@ -40,8 +40,7 @@ export default function Footer() {
               <li>Byraweshwara Nagar, Laggere,</li>
               <li>Bengaluru, 560058,</li>
               <li>Karnataka, India</li>
-              <li className="mt-4 pt-4">Email: <a href="mailto:info@aiontech.edu" className="hover:text-blue-400">info@aiontech.edu</a></li>
-              <li><a href="mailto:hr@aiontechnology.in" className="hover:text-blue-400">hr@aiontechnology.in</a></li>
+              <li className="mt-4 pt-4">Email: <a href="mailto:aionimscontactus@gmail.com" className="hover:text-blue-400">aionimscontactus@gmail.com</a></li>
               <li>Phone: +91 8050350011</li>
             </ul>
           </div>

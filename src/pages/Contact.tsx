@@ -81,7 +81,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900">Email</h3>
-                    <p className="mt-1 text-slate-600">info@aiontech.edu<br />admissions@aiontech.edu<br />hr@aiontechnology.in</p>
+                    <p className="mt-1 text-slate-600">aionimscontactus@gmail.com</p>
                   </div>
                 </div>
               </div>

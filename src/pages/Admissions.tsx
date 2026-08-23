@@ -334,7 +334,7 @@ export default function Admissions() {
                 </Link>
                 <div className="rounded-xl bg-white/5 p-4 border border-white/10">
                   <p className="text-sm font-medium text-slate-400 mb-1">Email</p>
-                  <p className="font-semibold text-white">admissions@aiontech.edu</p>
+                  <p className="font-semibold text-white">aionimscontactus@gmail.com</p>
                 </div>
                 <div className="rounded-xl bg-white/5 p-4 border border-white/10">
                   <p className="text-sm font-medium text-slate-400 mb-1">Phone</p>
