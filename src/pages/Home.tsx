@@ -56,7 +56,7 @@ export default function Home() {
             >
               <span className="mr-2 flex h-2 w-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
               <span className="text-sm font-medium tracking-wide text-blue-200">
-                Welcome to Aion Institute of Management Studies
+                Welcome to AION Technologies (P) Ltd.
               </span>
             </motion.div>
 
@@ -78,7 +78,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl"
             >
-              Aion Institute of Management Studies offers world-class education, cutting-edge research, and guaranteed placement opportunities in top-tier companies.
+              AION Institute of Management Studies (AIMS) offers world-class education, cutting-edge research, and guaranteed placement opportunities in top-tier companies.
             </motion.p>
 
             <motion.div
@@ -184,7 +184,7 @@ export default function Home() {
           <div className="mb-16 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">About Us</h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
-              Discover what makes AION - IMS a premier destination for higher education and professional growth.
+              Discover what makes AION Technologies and AIMS a premier destination for higher education and professional growth.
             </p>
           </div>
 
@@ -199,9 +199,9 @@ export default function Home() {
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
                   <BookOpen className="h-6 w-6" />
                 </div>
-                <h3 className="mb-3 text-2xl font-bold text-slate-900">About AION - IMS</h3>
+                <h3 className="mb-3 text-2xl font-bold text-slate-900">About AIMS</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  AION - IMS is dedicated to providing excellence in education. Our curriculum is designed by industry experts to bridge the gap between academic learning and corporate requirements, ensuring our students are industry-ready from day one.
+                  AION Institute of Management Studies (AIMS) is dedicated to providing excellence in education. Our curriculum is designed by industry experts to bridge the gap between academic learning and corporate requirements, ensuring our students are industry-ready from day one.
                 </p>
               </div>
 
@@ -209,9 +209,9 @@ export default function Home() {
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
                   <Building className="h-6 w-6" />
                 </div>
-                <h3 className="mb-3 text-2xl font-bold text-slate-900">Industry Partnerships</h3>
+                <h3 className="mb-3 text-2xl font-bold text-slate-900">About AION Tech (P) Ltd.</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Beyond education, AION - IMS focuses on technological innovation and recruitment. We partner with top banks, IT firms, and manufacturing giants to provide unparalleled placement opportunities for our graduates.
+                  As the parent organization, AION Technologies focuses on technological innovation and recruitment. We partner with top banks, IT firms, and manufacturing giants to provide unparalleled placement opportunities for our graduates.
                 </p>
               </div>
             </motion.div>

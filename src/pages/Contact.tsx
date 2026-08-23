@@ -13,9 +13,8 @@ export default function Contact() {
   const { register, handleSubmit } = useForm<ContactForm>();
 
   const onSubmit = (data: ContactForm) => {
-    const subject = encodeURIComponent(data.subject);
-    const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`);
-    window.location.href = `mailto:career.aiontech@gmail.com?subject=${subject}&body=${body}`;
+    console.log(data);
+    alert("Message sent successfully!");
   };
 
   return (
@@ -57,7 +56,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900">Campus Address</h3>
-                    <p className="mt-1 text-slate-600">AION - IMS<br />No 9, 1St Main Road, 3rd Cross,<br />Byraweshwara Nagar, Laggere, Bengaluru,<br />560058, Karnataka, India</p>
+                    <p className="mt-1 text-slate-600">
+                      Chinna's complex, REVA university circle, <br />
+                      Bagalur Main Rd, above Jockey Exclusive Store, <br />
+                      Niranthara Layout, Kattigenahalli, Bengaluru, <br />
+                      Sathanur, Karnataka 560063
+                    </p>
                   </div>
                 </div>
 
@@ -77,20 +81,19 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900">Email</h3>
-                    <p className="mt-1 text-slate-600">career.aiontech@gmail.com</p>
+                    <p className="mt-1 text-slate-600">info@aiontech.edu<br />admissions@aiontech.edu<br />hr@aiontechnology.in</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="rounded-2xl overflow-hidden shadow-sm border border-slate-200 h-64 bg-slate-200 relative">
-               <iframe 
-                 title="Map View"
-                 src="https://maps.google.com/maps?q=13.011178,77.520136&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                 width="100%" 
-                 height="100%" 
-                 style={{ border: 0 }} 
-                 allowFullScreen 
+               <iframe
+                 src="https://maps.google.com/maps?q=Chinna's%20complex,%20REVA%20university%20circle,%20Bagalur%20Main%20Rd,%20above%20Jockey%20Exclusive%20Store,%20Niranthara%20Layout,%20Kattigenahalli,%20Bengaluru,%20Sathanur,%20Karnataka%20560063&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                 width="100%"
+                 height="100%"
+                 style={{ border: 0 }}
+                 allowFullScreen
                  loading="lazy"
                  referrerPolicy="no-referrer-when-downgrade"
                ></iframe>

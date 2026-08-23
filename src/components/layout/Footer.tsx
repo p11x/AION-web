@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { logoBase64 } from "../../assets/logoBase64";
+import logoUrl from "../../assets/logo.png";
 
 export default function Footer() {
   return (
@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <img src={logoBase64} alt="AION - IMS Logo" className="h-8 w-auto object-contain" />
-              <h3 className="text-lg font-bold text-white">AION - IMS</h3>
+              <img src={logoUrl} alt="AION Technologies Logo" className="h-8 w-auto object-contain" />
+              <h3 className="text-lg font-bold text-white">AION Technologies</h3>
             </div>
             <p className="text-sm">
               Empowering future leaders through advanced education, innovative research, and exceptional placement opportunities.
@@ -36,17 +36,19 @@ export default function Footer() {
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">Contact</h4>
             <ul className="space-y-2 text-sm">
-              <li>AION - IMS</li>
-              <li>No 9, 1St Main Road, 3rd Cross,</li>
-              <li>Byraweshwara Nagar, Laggere, Bengaluru,</li>
-              <li>560058, Karnataka, India</li>
-              <li>Email: career.aiontech@gmail.com</li>
+              <li>Office</li>
+              <li>Chinna's complex, REVA university circle,</li>
+              <li>Bagalur Main Rd, above Jockey Exclusive Store,</li>
+              <li>Niranthara Layout, Kattigenahalli, Bengaluru,</li>
+              <li>Sathanur, Karnataka 560063</li>
+              <li className="mt-4 pt-4">Email: <a href="mailto:info@aiontech.edu" className="hover:text-blue-400">info@aiontech.edu</a></li>
+              <li><a href="mailto:hr@aiontechnology.in" className="hover:text-blue-400">hr@aiontechnology.in</a></li>
               <li>Phone: +91 8050350011</li>
             </ul>
           </div>
         </div>
         <div className="mt-12 border-t border-slate-800 pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} AION - IMS. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} AION Technologies (P) Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>

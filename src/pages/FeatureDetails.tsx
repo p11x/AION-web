@@ -120,7 +120,7 @@ export default function FeatureDetails() {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Next-Gen Tech</h4>
-                  <p className="text-xs text-slate-500">Powered by AION - IMS</p>
+                  <p className="text-xs text-slate-500">Powered by AION</p>
                 </div>
               </div>
               <p className="text-sm font-medium text-slate-600 leading-tight">

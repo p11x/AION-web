@@ -71,7 +71,7 @@ export const labsData = [
     bg: "bg-blue-500/10",
     details: {
       tagline: "Unleashing Computational Power",
-      overview: "Our computing facility provides the backbone for all data-intensive research at AION - IMS. We maintain state-of-the-art supercomputers and distributed networks.",
+      overview: "Our computing facility provides the backbone for all data-intensive research at AION. We maintain state-of-the-art supercomputers and distributed networks.",
       features: [
         { title: "Quantum Computing Algorithms", desc: "Researching algorithms optimized for quantum processors." },
         { title: "Cloud & Edge Infrastructure", desc: "Designing resilient distributed systems." },

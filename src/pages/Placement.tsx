@@ -249,7 +249,7 @@ export default function Placement() {
             <div className="relative z-10">
               <h2 className="mb-6 text-3xl font-extrabold md:text-5xl">Our Top Recruiters</h2>
               <p className="mx-auto mb-16 max-w-2xl text-lg text-slate-300">
-                AION - IMS is trusted by leading multinational corporations and innovative startups from India's tech ecosystem.
+                AION Technologies is trusted by leading multinational corporations and innovative startups from India's tech ecosystem.
               </p>
               <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
                 {recruiters.map((recruiter, index) => {

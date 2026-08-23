@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "motion/react";
 import { FileText, Download, HelpCircle, CheckCircle, GraduationCap, DollarSign, BookOpen, Clock, Check, PenLine, Users, ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -20,6 +21,7 @@ type ApplicationForm = {
 export default function Admissions() {
   const { register, handleSubmit, formState: { errors } } = useForm<ApplicationForm>();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -34,32 +36,25 @@ export default function Admissions() {
   const heroY = useTransform(scrollYProgress, [0, 0.2], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
-  const onSubmit = (data: ApplicationForm) => {
-    console.log(data);
-    
-    const subject = encodeURIComponent(`New Application from ${data.applicantName}`);
-    const body = encodeURIComponent(`New Application Details:
--------------------------
-Applicant Name: ${data.applicantName}
-Date of Birth: ${data.dob}
-
-Contact Details:
-Email: ${data.email}
-Contact Number: ${data.contactNo}
-WhatsApp Number: ${data.whatsappNo || 'N/A'}
-
-Address:
-${data.address}
-${data.city}, ${data.state} - ${data.pincode}
-
-Application Details:
-Category: ${data.category}
-Accepted Terms: ${data.acceptedTerms === 'accept' || data.acceptedTerms === true ? 'Yes' : 'No'}
--------------------------`);
-    
-    window.location.href = `mailto:career.aiontech@gmail.com?subject=${subject}&body=${body}`;
-    
-    setIsSubmitted(true);
+  const onSubmit = async (data: ApplicationForm) => {
+    try {
+      setIsSubmitting(true);
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        alert("Failed to send application. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -151,8 +146,8 @@ Accepted Terms: ${data.acceptedTerms === 'accept' || data.acceptedTerms === true
             </div>
             
             <div className="mt-20 flex justify-center">
-              <span className="inline-flex items-center rounded-full border border-slate-300 bg-transparent px-6 py-2.5 text-sm font-medium text-slate-600">
-                A ₹500 application fee completes your submission after eligibility and review.
+              <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-50/50 px-6 py-2.5 text-sm font-medium text-emerald-700">
+                Application is completely free. No hidden fees or charges.
               </span>
             </div>
           </div>
@@ -176,7 +171,7 @@ Accepted Terms: ${data.acceptedTerms === 'accept' || data.acceptedTerms === true
             >
               <div className="mb-6 border-b border-slate-100 pb-4">
                 <span className="mb-2 inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-600">
-                  AION - IMS
+                  Aion Technology (P) Ltd.
                 </span>
                 <h3 className="text-xl font-bold text-slate-900">Recruitment Criteria</h3>
               </div>
@@ -224,9 +219,12 @@ Accepted Terms: ${data.acceptedTerms === 'accept' || data.acceptedTerms === true
                 Have questions about the fee structure, eligibility, or scholarship opportunities? Our admissions team is here to help.
               </p>
               <div className="space-y-3">
+                <Link to="/contact" className="flex items-center justify-center w-full rounded-xl bg-emerald-600 hover:bg-emerald-500 transition-colors p-4 text-center font-bold text-white shadow-md shadow-emerald-900/20">
+                  Contact Us
+                </Link>
                 <div className="rounded-xl bg-white/5 p-4 border border-white/10">
                   <p className="text-sm font-medium text-slate-400 mb-1">Email</p>
-                  <p className="font-semibold text-white">career.aiontech@gmail.com</p>
+                  <p className="font-semibold text-white">admissions@aiontech.edu</p>
                 </div>
                 <div className="rounded-xl bg-white/5 p-4 border border-white/10">
                   <p className="text-sm font-medium text-slate-400 mb-1">Phone</p>
@@ -256,9 +254,9 @@ Accepted Terms: ${data.acceptedTerms === 'accept' || data.acceptedTerms === true
                     <CheckCircle className="h-12 w-12" />
                   </motion.div>
                   <h3 className="mb-4 text-3xl font-bold text-slate-900">Application Submitted!</h3>
-                  <p className="text-lg text-slate-600 mb-8 max-w-md mx-auto">Thank you for applying. Please proceed to pay the application fee to complete your submission.</p>
-                  <button className="rounded-full bg-emerald-600 px-8 py-4 font-bold text-white shadow-lg shadow-emerald-200 hover:bg-emerald-700 transition-all hover:scale-105">
-                    Pay Application Fee (Rs. 500/-)
+                  <p className="text-lg text-slate-600 mb-8 max-w-md mx-auto">Thank you for applying. Your application has been successfully submitted and is now under review.</p>
+                  <button onClick={() => window.location.reload()} className="rounded-full bg-emerald-600 px-8 py-4 font-bold text-white shadow-lg shadow-emerald-200 hover:bg-emerald-700 transition-all hover:scale-105">
+                    Submit Another Application
                   </button>
                 </div>
               ) : (
@@ -304,11 +302,11 @@ Accepted Terms: ${data.acceptedTerms === 'accept' || data.acceptedTerms === true
 
                       <div className="space-y-2">
                         <label className="text-sm font-semibold text-slate-700">Contact Number <span className="text-red-500">*</span></label>
-                        <input type="tel" {...register("contactNo", { required: true })} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="+91 98765 43210" />
+                        <input type="tel" {...register("contactNo", { required: true })} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="+91 XXXXX XXXXX" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm font-semibold text-slate-700">WhatsApp Number</label>
-                        <input type="tel" {...register("whatsappNo")} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="+91 98765 43210" />
+                        <input type="tel" {...register("whatsappNo")} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-sm outline-none transition-all focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-200" placeholder="+91 XXXXX XXXXX" />
                       </div>
                       
                       <div className="space-y-2 md:col-span-2">
@@ -351,11 +349,10 @@ Accepted Terms: ${data.acceptedTerms === 'accept' || data.acceptedTerms === true
 
                     <div className="flex flex-col sm:flex-row items-center justify-between border-t border-slate-100 pt-8 mt-8">
                       <div className="mb-4 sm:mb-0">
-                        <p className="text-sm text-slate-500 font-medium">Non-refundable Application Fee</p>
-                        <p className="text-2xl font-bold text-slate-900">₹ 500<span className="text-sm text-slate-500 font-normal">.00</span></p>
+                        <p className="text-2xl font-bold text-emerald-600">Free Application</p>
                       </div>
-                      <button type="submit" className="w-full sm:w-auto rounded-full bg-emerald-600 px-10 py-4 text-sm font-bold text-white transition-all hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-200">
-                        Submit Application
+                      <button type="submit" disabled={isSubmitting} className={`w-full sm:w-auto rounded-full bg-emerald-600 px-10 py-4 text-sm font-bold text-white transition-all hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-200 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
+                        {isSubmitting ? 'Submitting...' : 'Submit Application'}
                       </button>
                     </div>
                   </form>
