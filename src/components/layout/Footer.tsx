@@ -36,10 +36,10 @@ export default function Footer() {
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">Contact</h4>
             <ul className="space-y-2 text-sm">
               <li>Office</li>
-              <li>Chinna's complex, REVA university circle,</li>
-              <li>Bagalur Main Rd, above Jockey Exclusive Store,</li>
-              <li>Niranthara Layout, Kattigenahalli, Bengaluru,</li>
-              <li>Sathanur, Karnataka 560063</li>
+              <li>No 9, 1st Main Road, 3rd Cross,</li>
+              <li>Byraweshwara Nagar, Laggere,</li>
+              <li>Bengaluru, 560058,</li>
+              <li>Karnataka, India</li>
               <li className="mt-4 pt-4">Email: <a href="mailto:info@aiontech.edu" className="hover:text-blue-400">info@aiontech.edu</a></li>
               <li><a href="mailto:hr@aiontechnology.in" className="hover:text-blue-400">hr@aiontechnology.in</a></li>
               <li>Phone: +91 8050350011</li>

@@ -57,10 +57,10 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-slate-900">Campus Address</h3>
                     <p className="mt-1 text-slate-600">
-                      Chinna's complex, REVA university circle, <br />
-                      Bagalur Main Rd, above Jockey Exclusive Store, <br />
-                      Niranthara Layout, Kattigenahalli, Bengaluru, <br />
-                      Sathanur, Karnataka 560063
+                      No 9, 1st Main Road, 3rd Cross, <br />
+                      Byraweshwara Nagar, Laggere, <br />
+                      Bengaluru, 560058, <br />
+                      Karnataka, India
                     </p>
                   </div>
                 </div>
@@ -89,7 +89,7 @@ export default function Contact() {
 
             <div className="rounded-2xl overflow-hidden shadow-sm border border-slate-200 h-64 bg-slate-200 relative">
                <iframe
-                 src="https://maps.google.com/maps?q=Chinna's%20complex,%20REVA%20university%20circle,%20Bagalur%20Main%20Rd,%20above%20Jockey%20Exclusive%20Store,%20Niranthara%20Layout,%20Kattigenahalli,%20Bengaluru,%20Sathanur,%20Karnataka%20560063&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src="https://maps.google.com/maps?q=13.011178,77.520136&t=&z=16&ie=UTF8&iwloc=&output=embed"
                  width="100%"
                  height="100%"
                  style={{ border: 0 }}
