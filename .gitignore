@@ -3,6 +3,8 @@ build/
 dist/
 coverage/
 .firebase/
+.claude/
+.agents/
 .DS_Store
 *.log
 .env*
