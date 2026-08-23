@@ -22,6 +22,7 @@ export default function Admissions() {
   const { register, handleSubmit, formState: { errors } } = useForm<ApplicationForm>();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -39,19 +40,39 @@ export default function Admissions() {
   const onSubmit = async (data: ApplicationForm) => {
     try {
       setIsSubmitting(true);
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+      setErrorMessage("");
+
+      const formData = new FormData();
+      formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+      formData.append("from_name", data.applicantName);
+      formData.append("from_email", data.email);
+      formData.append("subject", `New Admission Application - ${data.applicantName}`);
+      formData.append("applicantName", data.applicantName);
+      formData.append("dob", data.dob);
+      formData.append("address", data.address);
+      formData.append("city", data.city);
+      formData.append("state", data.state);
+      formData.append("pincode", data.pincode);
+      formData.append("contactNo", data.contactNo);
+      formData.append("whatsappNo", data.whatsappNo || "N/A");
+      formData.append("email", data.email);
+      formData.append("category", data.category);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
       });
-      if (response.ok) {
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         setIsSubmitted(true);
       } else {
-        alert("Failed to send application. Please try again.");
+        setErrorMessage(result.message || "Failed to send application. Please try again.");
       }
     } catch (error) {
       console.error(error);
-      alert("An error occurred. Please try again.");
+      setErrorMessage("An error occurred. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -355,6 +376,16 @@ export default function Admissions() {
                         {isSubmitting ? 'Submitting...' : 'Submit Application'}
                       </button>
                     </div>
+                    {errorMessage && (
+                      <div className="mb-4 rounded-xl bg-red-50 p-4 border border-red-200">
+                        <p className="text-sm font-medium text-red-700 flex items-center">
+                          <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                          </svg>
+                          {errorMessage}
+                        </p>
+                      </div>
+                    )}
                   </form>
                 </>
               )}
