@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Search } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { SearchModal } from "../SearchModal";
-import aionLogoUrl from "../../assets/aion-logo.png";
+import aionBrandUrl from "../../assets/aion-brand.png";
 
 const navLinks = [
   { name: "About Us", path: "/" },
@@ -26,7 +26,7 @@ export default function Navbar() {
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
             <Link to="/" className="flex items-center space-x-3">
-              <img src={aionLogoUrl} alt="AION - IMS Logo" className="h-10 w-auto object-contain" />
+              <img src={aionBrandUrl} alt="AION - IMS Logo" className="h-10 w-auto object-contain" />
               <span className="text-2xl font-bold text-blue-900">AION - IMS</span>
             </Link>
           </div>
