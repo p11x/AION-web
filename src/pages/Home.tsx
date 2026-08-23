@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, BookOpen, Award, Building, Target } from "lucide-react";
+import { ArrowRight, BookOpen, Award, Handshake, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { programs } from "./Programs";
@@ -207,11 +207,11 @@ export default function Home() {
 
               <div className="rounded-2xl bg-white p-8 shadow-sm border border-slate-100">
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
-                  <Building className="h-6 w-6" />
+                  <Handshake className="h-6 w-6" />
                 </div>
-                <h3 className="mb-3 text-2xl font-bold text-slate-900">About AION-IMS</h3>
+                <h3 className="mb-3 text-2xl font-bold text-slate-900">Industry Partnerships</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  As the parent organization, AION-IMS focuses on technological innovation and recruitment. We partner with top banks, IT firms, and manufacturing giants to provide unparalleled placement opportunities for our graduates.
+                  We collaborate closely with top-tier banks, leading IT firms, and manufacturing giants. These strong corporate alliances bridge the gap between academia and industry, guaranteeing unparalleled placement opportunities for our graduates.
                 </p>
               </div>
             </motion.div>
