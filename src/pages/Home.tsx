@@ -209,7 +209,7 @@ export default function Home() {
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
                   <Building className="h-6 w-6" />
                 </div>
-                <h3 className="mb-3 text-2xl font-bold text-slate-900">About AION Tech (P) Ltd.</h3>
+                <h3 className="mb-3 text-2xl font-bold text-slate-900">About AION-IMS</h3>
                 <p className="text-slate-600 leading-relaxed">
                   As the parent organization, AION-IMS focuses on technological innovation and recruitment. We partner with top banks, IT firms, and manufacturing giants to provide unparalleled placement opportunities for our graduates.
                 </p>
