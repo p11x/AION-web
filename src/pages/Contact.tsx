@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -10,11 +11,42 @@ type ContactForm = {
 };
 
 export default function Contact() {
-  const { register, handleSubmit } = useForm<ContactForm>();
+  const { register, handleSubmit, reset } = useForm<ContactForm>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
 
-  const onSubmit = (data: ContactForm) => {
-    console.log(data);
-    alert("Message sent successfully!");
+  const onSubmit = async (data: ContactForm) => {
+    try {
+      setIsSubmitting(true);
+      setSubmitStatus(null);
+
+      const formData = new FormData();
+      formData.append("access_key", "dfde795e-622f-4baa-9c31-5fc33ea3eb54");
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("subject", data.subject);
+      formData.append("message", data.message);
+      formData.append("replyto", data.email);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitStatus("success");
+        reset();
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -145,10 +177,18 @@ export default function Contact() {
               </div>
               <button 
                 type="submit" 
-                className="flex w-full items-center justify-center rounded-md bg-blue-600 px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+                disabled={isSubmitting}
+                className={`flex w-full items-center justify-center rounded-md bg-blue-600 px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
-                Send Message <Send className="ml-2 h-4 w-4" />
+                {isSubmitting && 'Sending...'}
+                {!isSubmitting && <>Send Message <Send className="ml-2 h-4 w-4" /></>}
               </button>
+              {submitStatus === "success" && (
+                <p className="text-sm font-medium text-emerald-600">Your message has been sent successfully! We'll get back to you soon.</p>
+              )}
+              {submitStatus === "error" && (
+                <p className="text-sm font-medium text-red-600">Failed to send message. Please try again.</p>
+              )}
             </form>
           </motion.div>
         </div>
